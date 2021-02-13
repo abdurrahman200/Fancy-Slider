@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+body{
+  font-family: 'Rajdhani', sans-serif !important;
+  font-weight: 600 !important;
+  background-image: url('bg.png');
+ 
+}
+
+.container h2 {
+  color: #363958;
+  font-style: normal;
+  font-weight: 600;
+  text-align: left;
+  letter-spacing: 1px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 40px !important;
+  text-transform: uppercase !important;
+}
+
+.container h5 {
+  color: #363958;
+  font-style: normal;
+  font-weight: 600;
+  text-align: left;
+  letter-spacing: 1px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-transform: uppercase !important;
+}
+
+
+#sliders {
+  height: 400px;
+  width: 60%;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+
+.gallery-header {
+  display: none;
+}
+
+.slider-item {
+  display: none;
+}
+
+.img-thumbnail {
+  cursor: pointer;
+}
+
+.added {
+  border: 2px solid #1e1743;
+  border-radius: 5px;
+}
+
+img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.prev-next {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  cursor: pointer;
+}
+
+.prev, .next {
+  background-color: transparent;
+  padding: 8px 10px;
+  color: #fff;
+}
+
+.dot {
+  background-color: rgb(163, 156, 156);
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 3px;
+}
+
+.main {
+  display: none;
+}
+.form-control {
+  /* background-color: transparent !important; */
+  border-radius: 0px !important;
+  font-weight: 600 !important;
+  border: 2px solid #072a4d !important;
+}
+
+.form-control:focus {
+  border-color: #000 !important;
+  outline: 0;
+  box-shadow: 0 0 0 0.08rem rgb(2, 21, 24) !important;
+}
+
+.btn {
+  border-radius: 0px;
+  border-bottom: 2px solid #00a5d7 !important;
+}
+
+
+
+@media (max-width: 767px) {
+  .justify-content-around.align-items-center.mt-3.gallery-header.mb-2 {
+    flex-direction: column;
+  }
+  #sliders {
+    height: 300px;
+    width: 90%;
+  }
+}
