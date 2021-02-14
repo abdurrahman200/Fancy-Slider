@@ -32,13 +32,15 @@ document.getElementById('search').addEventListener('keypress', function (e) {
 });
 
 const getImages = (query) => {
-    
     if (query) {
         toggleSpinner()
         fetch(`https://pixabay.com/api/?key=${KEY}=${query}&image_type=photo&pretty=true`)
             .then(response => response.json())
             .then(data => showImages(data.hits))
             .catch(err => console.log(err))
+    }
+    else {
+        alert(' Please Type Something ');
     }
 }
 
@@ -128,6 +130,12 @@ sliderBtn.addEventListener('click', function () {
         createSlider();
     }
 })
+
+// New Feature
+
+// const countSelect = () => {
+//     const countShow = document.getElementById
+// }
 
 const toggleSpinner = () => {
     const spinner = document.getElementById('spinnerLoading').classList;
