@@ -117,3 +117,9 @@ img {
     width: 90%;
   }
 }
+
+/* = = = = spinner = = = = = */
+.spinner-grow {
+  width: 4rem; 
+  height: 4rem;
+}

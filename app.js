@@ -23,7 +23,6 @@ const showImages = (images) => {
     })
 }
 
-
 // Enter search-btn
 document.getElementById('search').addEventListener('keypress', function (e) {
     if (e.key == 'Enter') {
@@ -32,6 +31,7 @@ document.getElementById('search').addEventListener('keypress', function (e) {
 });
 
 const getImages = (query) => {
+    toggleSpinner()
     fetch(`https://pixabay.com/api/?key=${KEY}=${query}&image_type=photo&pretty=true`)
         .then(response => response.json())
         .then(data => showImages(data.hits))
@@ -76,6 +76,7 @@ const createSlider = () => {
         item.className = "slider-item";
         item.innerHTML = `<img class="w-100" src="${slide}" alt="">`;
         sliderContainer.appendChild(item)
+        toggleSpinner()
     })
     changeSlide(0)
     timer = setInterval(function () {
@@ -128,3 +129,10 @@ sliderBtn.addEventListener('click', function () {
         createSlider();
     }
 })
+
+
+const toggleSpinner = () => {
+    const spinner = document.getElementById('spinnerLoading');
+    spinner.classList.toggle('d-none');
+
+}
