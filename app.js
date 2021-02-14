@@ -17,10 +17,19 @@ const showImages = (images) => {
     images.forEach(image => {
         let div = document.createElement('div');
         div.className = 'col-lg-3 col-md-4 col-xs-6 img-item mb-2';
+        search.value = '';
         div.innerHTML = ` <img class="img-fluid img-thumbnail" onclick=selectItem(event,"${image.webformatURL}") src="${image.webformatURL}" alt="${image.tags}">`;
         gallery.appendChild(div)
     })
 }
+
+
+// Enter search-btn
+document.getElementById('search').addEventListener('keypress', function (e) {
+    if (e.key == 'Enter') {
+        document.getElementById('search-btn').click();
+    }
+});
 
 const getImages = (query) => {
     fetch(`https://pixabay.com/api/?key=${KEY}=${query}&image_type=photo&pretty=true`)
@@ -41,7 +50,7 @@ const selectItem = (event, img) => {
     }
 }
 
-var timer
+var timer;
 const createSlider = () => {
     // check slider image length
     if (sliders.length < 2) {
@@ -57,7 +66,7 @@ const createSlider = () => {
         <span class="next" onclick="changeItem(1)"><i class="fas fa-chevron-right"></i></span>
   `;
 
-    sliderContainer.appendChild(prevNext)
+    sliderContainer.appendChild(prevNext);
     document.querySelector('.main').style.display = 'block';
     // hide image aria
     imagesArea.style.display = 'none';
@@ -95,10 +104,10 @@ const changeSlide = (index) => {
     }
 
     items.forEach(item => {
-        item.style.display = "none"
+        item.style.display = "none";
     })
 
-    items[index].style.display = "block"
+    items[index].style.display = "block";
     // <a href="index.html" class="btn btn-secondary"> Go Home </a>
 }
 

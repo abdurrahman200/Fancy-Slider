@@ -27,6 +27,10 @@ body{
   text-transform: uppercase !important;
 }
 
+.navbar {
+  font-weight: 600 !important;
+}
+
 
 #sliders {
   height: 400px;
