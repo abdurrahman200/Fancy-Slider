@@ -13,6 +13,7 @@ const showImages = (images) => {
     imagesArea.style.display = 'block';
     gallery.innerHTML = '';
     // show gallery title
+    toggleSpinner()
     galleryHeader.style.display = 'flex';
     images.forEach(image => {
         let div = document.createElement('div');
@@ -32,10 +33,12 @@ document.getElementById('search').addEventListener('keypress', function (e) {
 
 const getImages = (query) => {
     toggleSpinner()
-    fetch(`https://pixabay.com/api/?key=${KEY}=${query}&image_type=photo&pretty=true`)
-        .then(response => response.json())
-        .then(data => showImages(data.hits))
-        .catch(err => console.log(err))
+    if (query) {
+        fetch(`https://pixabay.com/api/?key=${KEY}=${query}&image_type=photo&pretty=true`)
+            .then(response => response.json())
+            .then(data => showImages(data.hits))
+            .catch(err => console.log(err))
+    }
 }
 
 let slideIndex = 0;
@@ -76,7 +79,6 @@ const createSlider = () => {
         item.className = "slider-item";
         item.innerHTML = `<img class="w-100" src="${slide}" alt="">`;
         sliderContainer.appendChild(item)
-        toggleSpinner()
     })
     changeSlide(0)
     timer = setInterval(function () {
@@ -84,12 +86,10 @@ const createSlider = () => {
         changeSlide(slideIndex);
     }, duration);
 }
-
 // change slider index 
 const changeItem = index => {
     changeSlide(slideIndex += index);
 }
-
 // change slide item
 const changeSlide = (index) => {
 
@@ -107,7 +107,6 @@ const changeSlide = (index) => {
     items.forEach(item => {
         item.style.display = "none";
     })
-
     items[index].style.display = "block";
     // <a href="index.html" class="btn btn-secondary"> Go Home </a>
 }
@@ -130,9 +129,9 @@ sliderBtn.addEventListener('click', function () {
     }
 })
 
-
 const toggleSpinner = () => {
-    const spinner = document.getElementById('spinnerLoading');
-    spinner.classList.toggle('d-none');
-
+    const spinner = document.getElementById('spinnerLoading').classList;
+    const slidersSpinner = document.getElementById('sliders').classList;
+    spinner.toggle('d-none');
+    slidersSpinner.toggle('d-none');
 }
