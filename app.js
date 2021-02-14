@@ -32,8 +32,9 @@ document.getElementById('search').addEventListener('keypress', function (e) {
 });
 
 const getImages = (query) => {
-    toggleSpinner()
+    
     if (query) {
+        toggleSpinner()
         fetch(`https://pixabay.com/api/?key=${KEY}=${query}&image_type=photo&pretty=true`)
             .then(response => response.json())
             .then(data => showImages(data.hits))
@@ -108,7 +109,6 @@ const changeSlide = (index) => {
         item.style.display = "none";
     })
     items[index].style.display = "block";
-
 }
 
 searchBtn.addEventListener('click', function () {
