@@ -49,7 +49,7 @@ const selectItem = (event, img) => {
     if (item === -1) {
         sliders.push(img);
     } else {
-        sliders.pop(img);
+        sliders.splice(item, 1);
     }
 }
 
@@ -108,7 +108,7 @@ const changeSlide = (index) => {
         item.style.display = "none";
     })
     items[index].style.display = "block";
-    // <a href="index.html" class="btn btn-secondary"> Go Home </a>
+
 }
 
 searchBtn.addEventListener('click', function () {

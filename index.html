@@ -19,10 +19,12 @@
         <h2 class="mt-3 text-muted text-center">Search Image for create slider</h2>
         <div class="form-inline mt-4 d-flex justify-content-center">
             <div class="input-group col-md-11 mb-2">
-                <input type="text" class="form-control form-control-lg" id="search" placeholder="Search images and vectors . . . ">
+                <input type="text" class="form-control form-control-lg" id="search"
+                    placeholder="Search images and vectors . . . ">
             </div>
             <button type="button" id="search-btn" class="btn btn-lg btn-secondary mb-2">Search</button>
         </div>
+
         <!-- spinner -->
 
         <div id="spinnerLoading" class="text-center d-none">
@@ -39,20 +41,19 @@
                 </div>
                 <button id="create-slider" class="btn btn-secondary px-2">Create slider</button>
             </div>
-            <div class="row gallery">
 
+            <div class="row gallery">
             </div>
         </section>
 
         <!-- slider -->
         <div class="main">
+            <a href="index.html" class="btn btn-danger float-right">Home</a>
             <section class="mt-5" id="sliders">
             </section>
-
             <div class="dots d-flex mt-2 w-100 justify-content-center align-items-center bg-light">
                 <span class="dot" onclick="changeItem(-1)"></span>
                 <span class="dot" onclick="changeItem(1)"></span>
-
             </div>
         </div>
     </div>
