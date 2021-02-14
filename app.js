@@ -32,7 +32,7 @@ document.getElementById('search').addEventListener('keypress', function (e) {
 });
 
 const getImages = (query) => {
-    if (query) {
+    if (query) { // validation input field
         toggleSpinner()
         fetch(`https://pixabay.com/api/?key=${KEY}=${query}&image_type=photo&pretty=true`)
             .then(response => response.json())
@@ -131,12 +131,7 @@ sliderBtn.addEventListener('click', function () {
     }
 })
 
-// New Feature
-
-// const countSelect = () => {
-//     const countShow = document.getElementById
-// }
-
+// toggleSpinner
 const toggleSpinner = () => {
     const spinner = document.getElementById('spinnerLoading').classList;
     const slidersSpinner = document.getElementById('sliders').classList;
